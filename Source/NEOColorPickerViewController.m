@@ -143,6 +143,9 @@
 
 - (void) updateSelectedColor {
     self.selectedColorLayer.backgroundColor = self.selectedColor.CGColor;
+    if ([self.delegate respondsToSelector:@selector(colorPickerViewController:didChangeColor:)]) {
+        [self.delegate colorPickerViewController:self didChangeColor:self.selectedColor];
+    }
 }
 
 
