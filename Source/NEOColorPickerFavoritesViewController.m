@@ -71,7 +71,7 @@
     
     NSOrderedSet *colors = [NEOColorPickerFavoritesManager instance].favoriteColors;
     UIColor *pattern = [UIColor colorWithPatternImage:[UIImage imageNamed:@"colorPicker.bundle/color-picker-checkered"]];
-    int count = [colors count];
+    NSInteger count = [colors count];
     for (int i = 0; i < count; i++) {
         int page = i / 24;
         int x = i % 24;
@@ -93,7 +93,7 @@
         [self setupShadow:layer];
         [self.scrollView.layer addSublayer:layer];
     }
-    int pages = (count - 1) / 24 + 1;
+    NSInteger pages = (count - 1) / 24 + 1;
     
     self.scrollView.contentSize = CGSizeMake(pages * 320, 296);
     self.scrollView.delegate = self;
